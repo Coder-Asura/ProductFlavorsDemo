@@ -6,11 +6,11 @@ Android Studio 中利用 Gradle 开发多渠道版本配置步骤
 但是不管是哪个版本，通用的代码是占多数的，用多个 Project + svn 进行管理可以实现，但是有些难管理。
 其实在Android Studio 中，通过 Gradle 配置不同的 productFlovers 可以轻松解决这个难题。
 
-###需求
+### 需求
 在一个 Project 中实现对多渠道多版本的同一 App 进行管理，并可以配置差异项。
 
-###解决方法
-* ##### 新建一个 Project ，在 moudle 的 build.gralde 文件中添加 productFlavors
+### 解决方法
+* #### 新建一个 Project ，在 moudle 的 build.gralde 文件中添加 productFlavors
 ![添加productFlavors.png](http://upload-images.jianshu.io/upload_images/1981083-01e3aceb9ae0470b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 其中 ```applicationIdSuffix``` 是包名后缀，会在打包时将```applicationId```定义好的包名后面加上  ```applicationIdSuffix```定义的内容，如本来包名为```com.asura.productflavorsdemo```，加上后缀```.debug```后就变为```com.asura.productflavorsdemo.debug```。
@@ -18,7 +18,7 @@ Android Studio 中利用 Gradle 开发多渠道版本配置步骤
 添加完成之后，我们可以重新编译一下项目，发现在 Android Studio 主界面左下角（具体位置跟你的设置有关）的```Build Variants```窗口中多了一些 variant ，正好就是对应我们之前定义的 productFlavors。
 ![Build Variants.png](http://upload-images.jianshu.io/upload_images/1981083-e731ae6b06e21f67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* ##### 在 moulde 中的 ```src``` 文件夹下新建与 ```productFlavors``` 中定义的不同渠道名称一致的文件夹
+* #### 在 moulde 中的 ```src``` 文件夹下新建与 ```productFlavors``` 中定义的不同渠道名称一致的文件夹
 
 ![创建productFlavors对应的文件夹.png](http://upload-images.jianshu.io/upload_images/1981083-e80526b8c0a9e6c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
